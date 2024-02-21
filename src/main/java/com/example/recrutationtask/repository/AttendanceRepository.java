@@ -15,7 +15,7 @@ import java.util.UUID;
 
 public interface AttendanceRepository extends JpaRepository<Attendance, UUID> {
 
-    @Lock(LockModeType.WRITE)
+    @Lock(LockModeType.PESSIMISTIC_WRITE)
     @Transactional
     Optional<Attendance> findWithLockingById(UUID uuid);
 
