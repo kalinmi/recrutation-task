@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    <changeSet author="michal" id="20240221-michal-002">
+        <validCheckSum>any</validCheckSum>
+        <sql>
+            -- School inserts
+            insert into school (id, name, hourly_rate) values ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11', 'Primary School No 1', 50.0);
+            insert into school (id, name, hourly_rate) values ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a12', 'Middle School No 1', 55.0);
+            insert into school (id, name, hourly_rate) values ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a13', 'High School No 1', 60.0);
+            insert into school (id, name, hourly_rate) values ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a14', 'International School', 65.0);
+
+            -- Parent inserts
+            insert into parent (id, first_name, last_name) values ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a15', 'John', 'Doe');
+            insert into parent (id, first_name, last_name) values ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a16', 'Jane', 'Doe');
+            insert into parent (id, first_name, last_name) values ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a17', 'Jim', 'Beam');
+            insert into parent (id, first_name, last_name) values ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a18', 'Jack', 'Daniels');
+            insert into parent (id, first_name, last_name) values ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a19', 'Jill', 'Valentine');
+            insert into parent (id, first_name, last_name) values ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a20', 'Chris', 'Redfield');
+            insert into parent (id, first_name, last_name) values ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a21', 'Leon', 'Kennedy');
+
+            -- Child inserts
+            insert into child (id, first_name, last_name, parent_id, school_id) values ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a22', 'Alice', 'Johnson', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a15', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11');
+            insert into child (id, first_name, last_name, parent_id, school_id) values ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a23', 'Bob', 'Smith', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a16', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a12');
+            insert into child (id, first_name, last_name, parent_id, school_id) values ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a24', 'Charlie', 'Brown', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a17', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a13');
+            insert into child (id, first_name, last_name, parent_id, school_id) values ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a25', 'Daisy', 'Miller', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a18', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a14');
+            insert into child (id, first_name, last_name, parent_id, school_id) values ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a26', 'Ethan', 'Hunt', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a19', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11');
+            insert into child (id, first_name, last_name, parent_id, school_id) values ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a27', 'Fiona', 'Gallagher', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a20', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a12');
+            insert into child (id, first_name, last_name, parent_id, school_id) values ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a28', 'George', 'Bluth', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a21', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a13');
+            insert into child (id, first_name, last_name, parent_id, school_id) values ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a29', 'Hannah', 'Baker', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a15', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a14');
+            insert into child (id, first_name, last_name, parent_id, school_id) values ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a30', 'Ian', 'Gallagher', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a16', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a12');
+            insert into child (id, first_name, last_name, parent_id, school_id) values ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a31', 'Julia', 'Roberts', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a17', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a13');
+            insert into child (id, first_name, last_name, parent_id, school_id) values ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a32', 'Kevin', 'McCallister', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a18', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a14');
+            insert into child (id, first_name, last_name, parent_id, school_id) values ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a33', 'Liam', 'Neeson', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a19', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11');
+            insert into child (id, first_name, last_name, parent_id, school_id) values ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a34', 'Monica', 'Geller', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a20', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a12');
+            insert into child (id, first_name, last_name, parent_id, school_id) values ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a35', 'Nathan', 'Drake', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a21', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a13');
+            insert into child (id, first_name, last_name, parent_id, school_id) values ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a36', 'Olivia', 'Benson', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a15', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a14');
+
+            -- Attendance inserts
+            insert into attendance (id, entry_date, exit_date, child_id) values ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a37', '2024-02-21 08:00:00', '2024-02-21 16:00:00', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a22');
+            insert into attendance (id, entry_date, exit_date, child_id) values ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a38', '2024-02-22 08:30:00', '2024-02-22 15:30:00', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a23');
+            insert into attendance (id, entry_date, exit_date, child_id) values ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a39', '2024-02-23 09:00:00', '2024-02-23 17:00:00', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a24');
+            insert into attendance (id, entry_date, exit_date, child_id) values ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a40', '2024-02-24 08:15:00', '2024-02-24 16:15:00', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a25');
+            insert into attendance (id, entry_date, exit_date, child_id) values ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a41', '2024-02-25 08:45:00', '2024-02-25 15:45:00', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a26');
+            insert into attendance (id, entry_date, exit_date, child_id) values ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a42', '2024-02-26 09:30:00', '2024-02-26 17:30:00', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a27');
+            insert into attendance (id, entry_date, exit_date, child_id) values ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a43', '2024-02-27 08:00:00', '2024-02-27 16:00:00', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a28');
+            insert into attendance (id, entry_date, exit_date, child_id) values ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a44', '2024-02-28 08:30:00', '2024-02-28 15:30:00', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a29');
+            insert into attendance (id, entry_date, exit_date, child_id) values ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a45', '2024-03-01 09:00:00', '2024-03-01 17:00:00', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a30');
+            insert into attendance (id, entry_date, exit_date, child_id) values ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a46', '2024-03-02 08:15:00', '2024-03-02 16:15:00', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a31');
+            insert into attendance (id, entry_date, exit_date, child_id) values ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a47', '2024-03-03 08:45:00', '2024-03-03 15:45:00', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a32');
+            insert into attendance (id, entry_date, exit_date, child_id) values ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a48', '2024-03-04 09:30:00', '2024-03-04 17:30:00', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a33');
+            insert into attendance (id, entry_date, exit_date, child_id) values ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a49', '2024-03-05 08:00:00', '2024-03-05 16:00:00', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a34');
+            insert into attendance (id, entry_date, exit_date, child_id) values ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a50', '2024-03-06 08:30:00', '2024-03-06 15:30:00', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a35');
+            insert into attendance (id, entry_date, exit_date, child_id) values ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a51', '2024-03-07 09:00:00', '2024-03-07 17:00:00', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a36');
+            insert into attendance (id, entry_date, exit_date, child_id) values ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a52', '2024-03-08 08:15:00', '2024-03-08 16:15:00', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a22');
+            insert into attendance (id, entry_date, exit_date, child_id) values ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a53', '2024-03-09 09:30:00', '2024-03-09 17:30:00', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a23');
+            insert into attendance (id, entry_date, exit_date, child_id) values ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a54', '2024-03-10 08:45:00', '2024-03-10 15:45:00', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a24');
+            insert into attendance (id, entry_date, exit_date, child_id) values ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a55', '2024-03-11 09:15:00', '2024-03-11 16:15:00', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a25');
+            insert into attendance (id, entry_date, exit_date, child_id) values ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a56', '2024-03-12 08:00:00', '2024-03-12 16:00:00', 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a26');
+        </sql>
+    </changeSet>
+</databaseChangeLog>

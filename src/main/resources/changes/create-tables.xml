@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    <changeSet author="michal" id="20240221-michal-001">
+        <validCheckSum>any</validCheckSum>
+        <sql>
+            create table school (id uuid not null, name varchar(255), hourly_rate double precision, primary key (id));
+            create table parent (id uuid not null, first_name varchar(255), last_name varchar(255), primary key (id));
+            create table child (id uuid not null, first_name varchar(255), last_name varchar(255), parent_id uuid, school_id uuid, primary key (id), foreign key (parent_id) references parent(id), foreign key (school_id) references school(id));
+            create table attendance (id uuid not null, entry_date timestamp, exit_date timestamp, child_id uuid, primary key (id), foreign key (child_id) references child(id));
+        </sql>
+    </changeSet>
+</databaseChangeLog>
