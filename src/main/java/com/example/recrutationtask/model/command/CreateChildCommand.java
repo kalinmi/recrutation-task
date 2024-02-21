@@ -17,6 +17,8 @@ public class CreateChildCommand {
     @NotNull(message = "Lastname can not be null")
     @Pattern(regexp = "[A-Z][a-z]+", message = "LastName in wrong format")
     private String lastName;
+    @NotNull
     private UUID parentId;
+    @NotNull
     private UUID schoolId;
 }

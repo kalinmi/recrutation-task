@@ -11,7 +11,7 @@ import java.util.UUID;
 
 public interface ParentRepository extends JpaRepository<Parent, UUID> {
 
-    @Lock(LockModeType.WRITE)
+    @Lock(LockModeType.PESSIMISTIC_WRITE)
     @Transactional
     Optional<Parent> findWithLockingById(UUID uuid);
 }

@@ -1,6 +1,6 @@
 package com.example.recrutationtask.controller;
 
-import com.example.recrutationtask.model.command.CreateSchoolCommand;
+import com.example.recrutationtask.model.command.CreateParentCommand;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +16,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @ActiveProfiles("test")
 @SpringBootTest
 @AutoConfigureMockMvc
-class SchoolControllerIntegrationTest {
+class ParentControllerIntegrationTest {
+
 
     @Autowired
     private MockMvc mockMvc;
@@ -25,8 +26,8 @@ class SchoolControllerIntegrationTest {
     private ObjectMapper objectMapper;
 
     @Test
-    void getAllSchoolsTest() throws Exception {
-        mockMvc.perform(get("http://localhost:8080/api/v1/school")
+    void getAllParentsTest() throws Exception {
+        mockMvc.perform(get("http://localhost:8080/api/v1/parent")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.content").exists());
@@ -34,15 +35,15 @@ class SchoolControllerIntegrationTest {
 
     @Test
     void addSchoolTest() throws Exception {
-        CreateSchoolCommand command = new CreateSchoolCommand();
-        command.setName("Test School");
-        command.setHourPrice(100.0);
+        CreateParentCommand command = new CreateParentCommand();
+        command.setFirstName("Test");
+        command.setLastName("Parent");
 
-        mockMvc.perform(post("http://localhost:8080/api/v1/school")
+        mockMvc.perform(post("http://localhost:8080/api/v1/parent")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(command)))
                 .andExpect(status().isCreated())
-                .andExpect(jsonPath("$.name").value("Test School"))
-                .andExpect(jsonPath("$.hourPrice").value(100.0));
+                .andExpect(jsonPath("$.firstName").value("Test"))
+                .andExpect(jsonPath("$.lastName").value("Parent"));
     }
 }
